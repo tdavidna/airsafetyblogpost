@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      2 min read
     
 </span></p>
 
@@ -140,17 +140,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Exercise: 4.3</span>
-<span class="c1"># Date: 10-24-2021</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -158,21 +147,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">squarify</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -180,18 +154,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">home_dir</span> <span class="o">=</span> <span class="s1">'C:/David/Study_MS/DSC640'</span>
-<span class="n">airline_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">home_dir</span> <span class="o">+</span> <span class="s1">'/airline-safety.csv'</span><span class="p">)</span>
-<span class="n">road_crash_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">home_dir</span> <span class="o">+</span> <span class="s1">'/Car_Crashes.xlsx'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -199,17 +161,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">airline_df1</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[[</span><span class="s1">'incidents_85_99'</span><span class="p">,</span><span class="s1">'incidents_00_14'</span><span class="p">]]</span>
-<span class="n">airline_df2</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[[</span><span class="s1">'fatalities_00_14'</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -217,16 +168,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">airline_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -341,27 +282,19 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Data analysis works against the notion that the overall accident rate is a smoother version of a risk statistic tied to deaths.
+Airlines with more nonfatal accidents tended to have fewer deaths.Every incidents is of concern to safety professionals, who must learn whatever they can 
+from the event. Data clearly shows how the safety is getting better over period and fatalities keep decreasing with the help of all factors.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'fatal_accidents_85_99'</span><span class="p">])</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'1985 - 1999'</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Fatal Accidents"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'fatal_accidents_00_14'</span><span class="p">])</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'2000 - 2014'</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Incidents"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Fatal Accidents"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -391,19 +324,17 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Driving is more dangerous, with more than 5 million accidents compared to 20 accidents in flying. As per the comparison motor vehicle accident to be 1 in 98 for a lifetime. For air and space transport, the odds were 1 in 7K for a lifetime. Considering the risk perception, it may feel that flying is more dangerous, but the fact is different. Another reason is, plane crashes are catastrophic like killing more people at once. Other accidents happen every day and spread the loss over time, making their combined effects less noticeable.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incidents_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">home_dir</span> <span class="o">+</span> <span class="s1">'/PersonsKilled_1994_2019_USA.xlsx'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -411,16 +342,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incidents_df</span> <span class="o">=</span> <span class="n">incidents_df</span><span class="p">[(</span><span class="n">incidents_df</span><span class="p">[</span><span class="s1">'Year'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1999</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">incidents_df</span><span class="p">[</span><span class="s1">'Year'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2015</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -428,16 +349,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">'Vehicle'</span><span class="p">,</span><span class="s1">'Incident_count'</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -445,323 +356,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incidents_df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Passenger Cars</th>
-      <th>Light Trucks</th>
-      <th>Large Trucks</th>
-      <th>Motorcycles</th>
-      <th>Buses</th>
-      <th>Other/ Unknown</th>
-      <th>Total</th>
-      <th>Pedestrian</th>
-      <th>Pedalcyclist</th>
-      <th>Other</th>
-      <th>Total.1</th>
-      <th>Unknown Person Type</th>
-      <th>Total.2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6</th>
-      <td>2000</td>
-      <td>20699</td>
-      <td>11526</td>
-      <td>754</td>
-      <td>2897</td>
-      <td>22</td>
-      <td>450</td>
-      <td>33451</td>
-      <td>4763</td>
-      <td>693</td>
-      <td>141</td>
-      <td>5597</td>
-      <td>0</td>
-      <td>41945</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2001</td>
-      <td>20320</td>
-      <td>11723</td>
-      <td>708</td>
-      <td>3197</td>
-      <td>34</td>
-      <td>458</td>
-      <td>33243</td>
-      <td>4901</td>
-      <td>732</td>
-      <td>123</td>
-      <td>5756</td>
-      <td>0</td>
-      <td>42196</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2002</td>
-      <td>20569</td>
-      <td>12274</td>
-      <td>689</td>
-      <td>3270</td>
-      <td>45</td>
-      <td>528</td>
-      <td>34105</td>
-      <td>4851</td>
-      <td>665</td>
-      <td>114</td>
-      <td>5630</td>
-      <td>0</td>
-      <td>43005</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2003</td>
-      <td>19725</td>
-      <td>12546</td>
-      <td>726</td>
-      <td>3714</td>
-      <td>41</td>
-      <td>589</td>
-      <td>33627</td>
-      <td>4774</td>
-      <td>629</td>
-      <td>140</td>
-      <td>5543</td>
-      <td>0</td>
-      <td>42884</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2004</td>
-      <td>19192</td>
-      <td>12674</td>
-      <td>766</td>
-      <td>4028</td>
-      <td>42</td>
-      <td>602</td>
-      <td>33276</td>
-      <td>4675</td>
-      <td>727</td>
-      <td>130</td>
-      <td>5532</td>
-      <td>0</td>
-      <td>42836</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2005</td>
-      <td>18512</td>
-      <td>13037</td>
-      <td>804</td>
-      <td>4576</td>
-      <td>58</td>
-      <td>659</td>
-      <td>33070</td>
-      <td>4892</td>
-      <td>786</td>
-      <td>186</td>
-      <td>5864</td>
-      <td>0</td>
-      <td>43510</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2006</td>
-      <td>17925</td>
-      <td>12761</td>
-      <td>805</td>
-      <td>4837</td>
-      <td>27</td>
-      <td>601</td>
-      <td>32119</td>
-      <td>4795</td>
-      <td>772</td>
-      <td>185</td>
-      <td>5752</td>
-      <td>0</td>
-      <td>42708</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2007</td>
-      <td>16614</td>
-      <td>12458</td>
-      <td>805</td>
-      <td>5174</td>
-      <td>36</td>
-      <td>614</td>
-      <td>30527</td>
-      <td>4699</td>
-      <td>701</td>
-      <td>158</td>
-      <td>5558</td>
-      <td>0</td>
-      <td>41259</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2008</td>
-      <td>14646</td>
-      <td>10816</td>
-      <td>682</td>
-      <td>5312</td>
-      <td>67</td>
-      <td>580</td>
-      <td>26791</td>
-      <td>4414</td>
-      <td>718</td>
-      <td>188</td>
-      <td>5320</td>
-      <td>0</td>
-      <td>37423</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>2009</td>
-      <td>13135</td>
-      <td>10312</td>
-      <td>499</td>
-      <td>4469</td>
-      <td>26</td>
-      <td>554</td>
-      <td>24526</td>
-      <td>4109</td>
-      <td>628</td>
-      <td>151</td>
-      <td>4888</td>
-      <td>0</td>
-      <td>33883</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>2010</td>
-      <td>12491</td>
-      <td>9782</td>
-      <td>530</td>
-      <td>4518</td>
-      <td>44</td>
-      <td>524</td>
-      <td>23371</td>
-      <td>4302</td>
-      <td>623</td>
-      <td>185</td>
-      <td>5110</td>
-      <td>0</td>
-      <td>32999</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>2011</td>
-      <td>12014</td>
-      <td>9302</td>
-      <td>640</td>
-      <td>4630</td>
-      <td>55</td>
-      <td>499</td>
-      <td>22510</td>
-      <td>4457</td>
-      <td>682</td>
-      <td>200</td>
-      <td>5339</td>
-      <td>0</td>
-      <td>32479</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>2012</td>
-      <td>12361</td>
-      <td>9418</td>
-      <td>697</td>
-      <td>4986</td>
-      <td>39</td>
-      <td>502</td>
-      <td>23017</td>
-      <td>4818</td>
-      <td>734</td>
-      <td>227</td>
-      <td>5779</td>
-      <td>0</td>
-      <td>33782</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>2013</td>
-      <td>12037</td>
-      <td>9186</td>
-      <td>695</td>
-      <td>4692</td>
-      <td>54</td>
-      <td>511</td>
-      <td>22483</td>
-      <td>4779</td>
-      <td>749</td>
-      <td>190</td>
-      <td>5718</td>
-      <td>0</td>
-      <td>32893</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>2014</td>
-      <td>11947</td>
-      <td>9103</td>
-      <td>656</td>
-      <td>4594</td>
-      <td>44</td>
-      <td>557</td>
-      <td>22307</td>
-      <td>4910</td>
-      <td>729</td>
-      <td>204</td>
-      <td>5843</td>
-      <td>0</td>
-      <td>32744</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
     
@@ -769,138 +363,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">value_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Vehicle'</span><span class="p">:</span><span class="s1">'Cars'</span><span class="p">,</span><span class="s1">'Incident_count'</span><span class="p">:</span><span class="n">incidents_df</span><span class="p">[</span><span class="s1">'Passenger Cars'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()}</span>
-<span class="n">light_truck</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Vehicle'</span><span class="p">:</span><span class="s1">'Light Trucks'</span><span class="p">,</span><span class="s1">'Incident_count'</span><span class="p">:</span><span class="n">incidents_df</span><span class="p">[</span><span class="s1">'Light Trucks'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()}</span>
-<span class="n">Large_Trucks</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Vehicle'</span><span class="p">:</span><span class="s1">'Large Trucks'</span><span class="p">,</span><span class="s1">'Incident_count'</span><span class="p">:</span><span class="n">incidents_df</span><span class="p">[</span><span class="s1">'Large Trucks'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()}</span>
-<span class="n">Motorcycle</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Vehicle'</span><span class="p">:</span><span class="s1">'Motorcycles'</span><span class="p">,</span><span class="s1">'Incident_count'</span><span class="p">:</span><span class="n">incidents_df</span><span class="p">[</span><span class="s1">'Motorcycles'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()}</span>
-<span class="n">Buses</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Vehicle'</span><span class="p">:</span><span class="s1">'Buses'</span><span class="p">,</span><span class="s1">'Incident_count'</span><span class="p">:</span><span class="n">incidents_df</span><span class="p">[</span><span class="s1">'Buses'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()}</span>
-<span class="n">Air</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Vehicle'</span><span class="p">:</span><span class="s1">'Air'</span><span class="p">,</span><span class="s1">'Incident_count'</span><span class="p">:</span><span class="n">airline_df</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()}</span>
-
-<span class="n">metrics2_df</span> <span class="o">=</span> <span class="n">metrics2_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value_dict</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">metrics2_df</span> <span class="o">=</span> <span class="n">metrics2_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">light_truck</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">metrics2_df</span> <span class="o">=</span> <span class="n">metrics2_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Large_Trucks</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">metrics2_df</span> <span class="o">=</span> <span class="n">metrics2_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Motorcycle</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">metrics2_df</span> <span class="o">=</span> <span class="n">metrics2_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Buses</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">metrics2_df</span> <span class="o">=</span> <span class="n">metrics2_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Air</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics2_df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Vehicle</th>
-      <th>Incident_count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Cars</td>
-      <td>242187</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Light Trucks</td>
-      <td>166918</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Large Trucks</td>
-      <td>10456</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Motorcycles</td>
-      <td>64894</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Buses</td>
-      <td>634</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Air</td>
-      <td>231</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Vehicle'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Incident_count'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">metrics2_df</span><span class="p">)</span>
-<span class="c1">#plt.xticks(rotation=60)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Incident Count'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Vehicle'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Incident Count by Vehicle(2000 - 2014)'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -930,26 +392,18 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fatal accidents have fallen every decade since long. In past, there were 40 fatal accidents per one million aircraft departures in US. Within 10 years this had improved to less than two in every million departures, failing to around 0.1 per million today.
+Fatality data is impressive to see the improvements in safety are even more impressive when the increase in air traffic is considered. Positive indications on safety improvements helps future to reduce the fatality counts further.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
-<span class="c1">#ax = fig.add_axes(['2000-2014','1985-1999'])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">airline_df</span><span class="p">[[</span><span class="s1">'fatalities_00_14'</span><span class="p">,</span><span class="s1">'fatalities_85_99'</span><span class="p">]])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">'2000-2014'</span><span class="p">,</span> <span class="s1">'1985-1999'</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'fatality Count'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="c1">#plt.xlabel('Vehicle', color='black', fontweight = 'bold', fontsize = 10)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Fatality Comparison'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -979,107 +433,17 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As per the analysis no specific airlines continuously in the top incident list. Incident count has been changing over period based on different reasons. Airlines try to learn from experience, understanding what went wrong so that it won’t go wrong next time. Controlling other factors related to accidents and incidents the measure clearly shows the reduction in airline accident and incident rates. Also, airlines learn and reduce the incidents through general improvements in technology.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">treemap_df</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[[</span><span class="s1">'airline'</span><span class="p">,</span><span class="s1">'incidents_85_99'</span><span class="p">]]</span>
-<span class="n">treemap_df</span> <span class="o">=</span> <span class="n">treemap_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">])</span>
-<span class="n">treemap_df</span> <span class="o">=</span> <span class="n">treemap_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">treemap_df</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">treemap_df</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">]</span><span class="o">/</span><span class="n">treemap_df</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="c1">#.round(0)</span>
-<span class="n">treemap_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>airline</th>
-      <th>incidents_85_99</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>51</th>
-      <td>United / Continental*</td>
-      <td>11.515152</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>American*</td>
-      <td>12.727273</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Delta / Northwest*</td>
-      <td>14.545455</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Ethiopian Airlines</td>
-      <td>15.151515</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Aeroflot*</td>
-      <td>46.060606</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">squarify</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="o">=</span><span class="n">treemap_df</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">treemap_df</span><span class="p">[</span><span class="s1">'airline'</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Top 5 Incidents 1985 - 99'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1103,104 +467,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">treemap_df2</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[[</span><span class="s1">'airline'</span><span class="p">,</span><span class="s1">'incidents_00_14'</span><span class="p">]]</span>
-<span class="n">treemap_df2</span> <span class="o">=</span> <span class="n">treemap_df2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">])</span>
-<span class="n">treemap_df2</span> <span class="o">=</span> <span class="n">treemap_df2</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">treemap_df2</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">treemap_df2</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">]</span><span class="o">/</span><span class="n">treemap_df2</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="n">treemap_df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>airline</th>
-      <th>incidents_00_14</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>40</th>
-      <td>Saudi Arabian</td>
-      <td>14.285714</td>
-    </tr>
-    <tr>
-      <th>52</th>
-      <td>US Airways / America West*</td>
-      <td>14.285714</td>
-    </tr>
-    <tr>
-      <th>51</th>
-      <td>United / Continental*</td>
-      <td>18.181818</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>American*</td>
-      <td>22.077922</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Delta / Northwest*</td>
-      <td>31.168831</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">squarify</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="o">=</span><span class="n">treemap_df2</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">treemap_df2</span><span class="p">[</span><span class="s1">'airline'</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Top 5 Incidents 2000 - 14'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1230,23 +496,17 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Mortality rate for air travel is 0.07 fatalities per billion passenger miles as compared to 7.28 fatalities per billion passenger miles for other travel. Statistics explains that it is over 100 times more hazardous to drive than fly on a per-mile basis. Converted the numbers for better visualization. Also used Bar Chart to visualize the data of each airline.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics5_df</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[[</span><span class="s1">'airline'</span><span class="p">,</span><span class="s1">'avail_seat_km_per_week'</span><span class="p">]]</span>
-<span class="n">metrics5_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">]</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">]</span> <span class="o">+</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">]</span>
-<span class="n">metrics5_df</span> <span class="o">=</span> <span class="n">metrics5_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'avail_seat_km_per_week'</span><span class="p">])</span>
-<span class="n">metrics5_df</span> <span class="o">=</span> <span class="n">metrics5_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">metrics5_df</span><span class="p">[</span><span class="s1">'avail_seat_km_per_week'</span><span class="p">]</span> <span class="o">=</span> <span class="n">metrics5_df</span><span class="p">[</span><span class="s1">'avail_seat_km_per_week'</span><span class="p">]</span><span class="o">/</span><span class="mi">1000000000</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -1254,24 +514,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">metrics5_df</span><span class="p">[[</span><span class="s1">'airline'</span><span class="p">,</span><span class="s1">'avail_seat_km_per_week'</span><span class="p">]]</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'Airline'</span><span class="p">,</span><span class="s1">'Count'</span><span class="p">)</span>
-<span class="n">df1</span><span class="p">[</span><span class="s1">'Description'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Available_Miles'</span>
-<span class="n">df1</span>
-<span class="n">df2</span> <span class="o">=</span> <span class="n">metrics5_df</span><span class="p">[[</span><span class="s1">'airline'</span><span class="p">,</span><span class="s1">'Incidents'</span><span class="p">]]</span>
-<span class="n">df2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'Airline'</span><span class="p">,</span><span class="s1">'Count'</span><span class="p">)</span>
-<span class="n">df2</span><span class="p">[</span><span class="s1">'Description'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Incidents'</span>
-<span class="n">frames</span><span class="o">=</span><span class="p">[</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">]</span>
-<span class="n">metrics5_final_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -1279,22 +521,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Airline'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Count'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"Description"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">metrics5_final_df</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Count(Miles in billion)'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Airline'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Compare Incidents based on Miles'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1324,24 +550,18 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Flying seems scarier when there is a plane crash in the news. Also, one crash can’t change the overall statistical risk much.
+Explain the data spread including Incidents, Fatal Accidents and Fatalities for the top airlines with more incidents. This metrics provide more insight how the airlines incidents spread based on the available data. Used staked area chart to present this metrics.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics6_df</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[[</span><span class="s1">'airline'</span><span class="p">]]</span>
-<span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">]</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'incidents_00_14'</span><span class="p">]</span> <span class="o">+</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'incidents_85_99'</span><span class="p">]</span>
-<span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatal_Accidents'</span><span class="p">]</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'fatal_accidents_00_14'</span><span class="p">]</span> <span class="o">+</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'fatal_accidents_85_99'</span><span class="p">]</span>
-<span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatalities'</span><span class="p">]</span> <span class="o">=</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'fatalities_00_14'</span><span class="p">]</span> <span class="o">+</span> <span class="n">airline_df</span><span class="p">[</span><span class="s1">'fatalities_85_99'</span><span class="p">]</span>
-<span class="n">metrics6_df</span> <span class="o">=</span> <span class="n">metrics6_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">])</span>
-<span class="n">metrics6_df</span> <span class="o">=</span> <span class="n">metrics6_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -1349,18 +569,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">]</span> <span class="o">+</span> <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatal_Accidents'</span><span class="p">]</span> <span class="o">+</span> <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatalities'</span><span class="p">]))</span>
-<span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatal_Accidents'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatal_Accidents'</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">]</span> <span class="o">+</span> <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatal_Accidents'</span><span class="p">]</span> <span class="o">+</span> <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatalities'</span><span class="p">]))</span>
-<span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatalities'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatalities'</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">]</span> <span class="o">+</span> <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatal_Accidents'</span><span class="p">]</span> <span class="o">+</span> <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatalities'</span><span class="p">]))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -1368,123 +576,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics6_df</span><span class="p">[[</span><span class="s1">'Incidents'</span><span class="p">,</span><span class="s1">'Fatal_Accidents'</span><span class="p">,</span><span class="s1">'Fatalities'</span><span class="p">]]</span> <span class="o">=</span> \
-<span class="n">metrics6_df</span><span class="p">[[</span><span class="s1">'Incidents'</span><span class="p">,</span><span class="s1">'Fatal_Accidents'</span><span class="p">,</span><span class="s1">'Fatalities'</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">metrics6_df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>airline</th>
-      <th>Incidents</th>
-      <th>Fatal_Accidents</th>
-      <th>Fatalities</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>22</th>
-      <td>Ethiopian Airlines</td>
-      <td>10.135135</td>
-      <td>2.364865</td>
-      <td>87.500000</td>
-    </tr>
-    <tr>
-      <th>51</th>
-      <td>United / Continental*</td>
-      <td>7.006369</td>
-      <td>2.123142</td>
-      <td>90.870488</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>American*</td>
-      <td>6.749556</td>
-      <td>1.420959</td>
-      <td>91.829485</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Delta / Northwest*</td>
-      <td>9.230769</td>
-      <td>2.692308</td>
-      <td>88.076923</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Aeroflot*</td>
-      <td>26.198083</td>
-      <td>4.792332</td>
-      <td>69.009585</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">stackplot</span><span class="p">(</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'airline'</span><span class="p">],</span>
-              <span class="p">[</span><span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">],</span> <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatal_Accidents'</span><span class="p">],</span> 
-               <span class="n">metrics6_df</span><span class="p">[</span><span class="s1">'Fatalities'</span><span class="p">]],</span>
-               <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'Incidents'</span><span class="p">,</span><span class="s1">'Fatal_Accidents'</span><span class="p">,</span><span class="s1">'Fatalities'</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Incident and Accident Comparison'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Airline'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Incidents by Airways'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">'large'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
